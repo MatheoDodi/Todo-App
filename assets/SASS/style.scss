@@ -1,0 +1,106 @@
+// Importing Partials //
+
+
+// Fonts used //
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+
+// mix-ins //
+
+
+@mixin mainFont($size) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $size;
+}
+
+@mixin border($color) {
+    border-right: 1px solid $color; 
+    border-bottom: 1px solid $color;
+    border-left: 1px solid $color; 
+}
+
+@mixin shadow() {
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.185);   
+}
+
+// Variables //
+
+$background_color : #f5f5f5;
+$heading_color : #ead7d7;
+$heading_size : 7rem;
+
+// Style //
+
+body {
+    height: 100vh; 
+    margin: 0;
+    background-color: $background_color;
+    display: grid;
+    justify-items: center;
+    grid-auto-rows: min-content;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(90, 90, 90); 
+}
+
+a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#form {
+    @include shadow();
+}
+
+.heading {
+    @include mainFont(300);
+    color: $heading_color;
+    font-size: $heading_size;
+    letter-spacing: -5px;
+    margin-bottom: 1rem;
+}
+    
+#input {
+    width: 30rem;
+    padding: 1rem 3rem;
+    @include mainFont(400);
+    font-size: 1.3rem;
+    border: 1px solid rgba(0, 0, 0, 0.397); 
+} 
+
+.task_list {
+    margin: 0;
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: $heading_color;
+    position: relative;
+    z-index: 10;
+}
+
+.task {
+    @include mainFont(400);
+    @include border(rgba(0, 0, 0, 0.397));
+    font-size: 1.3rem;
+    padding: 1rem 3rem;
+}
+
+.task:hover {
+    cursor: pointer;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.filters {
+    background-color: $heading_color;
+    display: flex;
+    justify-content: space-evenly;
+    @include border(rgba(0, 0, 0, 0.397));
+    @include mainFont(400);
+}
+
