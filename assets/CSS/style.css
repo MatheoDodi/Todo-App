@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400");
+* {
+  box-sizing: border-box; }
+
 body {
   height: 100vh;
   margin: 0;
@@ -16,7 +19,8 @@ a:hover {
   cursor: pointer; }
 
 #form {
-  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.185); }
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.185);
+  width: 40%; }
 
 .heading {
   font-family: 'Montserrat', sans-serif;
@@ -27,12 +31,15 @@ a:hover {
   margin-bottom: 1rem; }
 
 #input {
-  width: 30rem;
+  width: 100%;
   padding: 1rem 3rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 1.3rem;
   border: 1px solid rgba(0, 0, 0, 0.397); }
+
+#input:focus {
+  outline: none; }
 
 .task_list {
   margin: 0;
@@ -57,7 +64,9 @@ a:hover {
   cursor: pointer; }
 
 .strikethrough {
-  text-decoration: line-through; }
+  text-decoration: line-through;
+  background: #e0e0e0;
+  transition: all 0.25s ease-in-out; }
 
 .filters {
   background-color: #ead7d7;
@@ -68,5 +77,18 @@ a:hover {
   border-left: 1px solid rgba(0, 0, 0, 0.397);
   font-family: 'Montserrat', sans-serif;
   font-weight: 400; }
+
+@media only screen and (max-width: 1025px) {
+  #form {
+    width: 80%; } }
+@media only screen and (max-width: 780px) {
+  #form {
+    width: 90%; } }
+@media only screen and (max-width: 415px) {
+  #form {
+    width: 92.5%; } }
+@media only screen and (max-width: 380px) {
+  #form {
+    width: 95%; } }
 
 /*# sourceMappingURL=style.css.map */

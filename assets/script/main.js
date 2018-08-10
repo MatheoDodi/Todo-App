@@ -60,10 +60,22 @@ INPUT.addEventListener( "keyup", (key) => {
                 })
             })
 
+        document.getElementById('completed').addEventListener('click', () => {
+            taskList.innerHTML = "";
+                ALL_TASKS.completed.forEach( (todo) => {
+                    taskList.innerHTML += `<li class="task strikethrough" data-completed="completed" data-all="all">${todo}</li>`
+                })
+            })
+
         document.getElementById('all').addEventListener('click', () => {
             taskList.innerHTML = "";
                 ALL_TASKS.all().forEach( (todo) => {
+
+                    if (ALL_TASKS.completed.indexOf(todo) !== -1) {
+                        taskList.innerHTML += `<li class="task strikethrough" data-completed="completed" data-all="all">${todo}</li>`
+                    } else {
                     taskList.innerHTML += `<li class="task" data-active="active" data-all="all">${todo}</li>`
+                    }
                 })
             })
         }
@@ -77,12 +89,14 @@ taskList.addEventListener('click', (event) => {
 
     if (index === -1) {
         clickedTask.classList.add("strikethrough");
-        let index2 = ALL_TASKS.active.indexOf(clickedTask.innerHTML)
+        let index2 = ALL_TASKS.active.indexOf(clickedTask.innerHTML);
         let completed_task = ALL_TASKS.active.splice( index2, 1 );
         ALL_TASKS.completed.push(...completed_task);
-        console.log(ALL_TASKS.completed);
         
     } else {
         clickedTask.classList.remove("strikethrough");
+        let index2 = ALL_TASKS.completed.indexOf(clickedTask.innerHTML);
+        let completed_task = ALL_TASKS.completed.splice ( index2, 1 );
+        ALL_TASKS.active.push(...completed_task);
     }
 })

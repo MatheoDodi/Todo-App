@@ -1,0 +1,27 @@
+@media only screen and (max-width: $break_large) {
+    
+    #form {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: $break_medium) {
+    
+    #form {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: $break_small) {
+    
+    #form {
+        width: 92.5%;
+    }
+}
+
+@media only screen and (max-width: $break_xsmall) {
+    
+    #form {
+        width: 95%;
+    }
+}
