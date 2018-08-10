@@ -96,6 +96,7 @@ a:hover {
     @include border(rgba(0, 0, 0, 0.397));
     font-size: 1.3rem;
     padding: 1rem 3rem;
+    transition: all 0.25s ease-in-out;
 }
 
 .task:hover {
@@ -105,7 +106,6 @@ a:hover {
 .strikethrough {
     text-decoration: line-through;
     background: rgb(224, 224, 224);
-    transition: all 0.25s ease-in-out;
 }
 
 .filters {
